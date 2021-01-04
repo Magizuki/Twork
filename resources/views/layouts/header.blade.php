@@ -6,7 +6,7 @@
         <a class="navbar-brand" style="color: rgb(231, 231, 22); font-family: 'Oswald', sans-serif;" href=" {{ route('root') }}">TWORK</a>
     @else
         {{-- Jika admin dan member yang mengakses halaman --}}
-        <a class="navbar-brand" style="color: rgb(231, 231, 22); font-family: 'Oswald', sans-serif;" href=" {{ route('home') }}">TWORK</a>
+        <a class="navbar-brand" style="color: rgb(231, 231, 22); font-family: 'Oswald', sans-serif;" href="{{ 'home/'.Auth::user()->id }}">TWORK</a>
     @endguest
 
     {{-- <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

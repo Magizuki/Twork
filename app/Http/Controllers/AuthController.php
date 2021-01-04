@@ -66,8 +66,8 @@ class AuthController extends Controller
         else{
             Auth::attempt($credential);
         }
-
-        return redirect('/home');
+        $return ="/home/".Auth::user()->id;
+        return redirect($return);
     
     }
 

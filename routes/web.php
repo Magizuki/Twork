@@ -24,10 +24,13 @@ Route::post('/doRegister','AuthController@doRegister');
 Route::get('/login','AuthController@showLogin')->name('login');
 Route::post('/doLogin','AuthController@doLogin');
 
-Route::get('logout', 'AuthController@doLogout');
+Route::get('/logout', 'AuthController@doLogout');
 
-Route::get('/home', function() {
-    return view('home');
-})->name('home')->middleware('memberchecking');
+Route::get('/home/{UserId}','HomeController@GetAllProjectByUserId')->name('home')->middleware('memberchecking');
 
+Route::get('/creategroup','GroupController@GetGroupFeature')->middleware('memberchecking');
+
+Route::post('/submitgroup','GroupController@SubmitGroup')->middleware('memberchecking');
+
+Route::get('/listgroup','GroupController@ViewGroup')->middleware('memberchecking');
 

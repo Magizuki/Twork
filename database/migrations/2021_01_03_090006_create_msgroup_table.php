@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProjectTable extends Migration
+class CreateMsGroupTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateProjectTable extends Migration
      */
     public function up()
     {
-        Schema::create('msproject', function (Blueprint $table) {
+        Schema::create('msgroup', function (Blueprint $table) {
             $table->id();
-            $table->integer('UserId');
-            $table->string('ProjectName');
-            $table->string('AuthorEmail');
+            $table->Integer('userId');
+            $table->String('groupName');
+            $table->Integer('historyId');
+            $table->String('AuditUsername');
             $table->datetime('AuditTime');
             $table->char('AuditActivity');
         });
@@ -30,6 +31,6 @@ class CreateProjectTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('project');
+        Schema::dropIfExists('tr_group');
     }
 }
