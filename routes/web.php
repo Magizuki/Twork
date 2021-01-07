@@ -32,7 +32,13 @@ Route::get('/creategroup','GroupController@GetGroupFeature')->middleware('member
 
 Route::post('/submitgroup','GroupController@SubmitGroup')->middleware('memberchecking');
 
-Route::get('/listgroup','GroupController@ViewGroup')->middleware('memberchecking');
+Route::get('/listgroup','GroupController@ListGroup')->middleware('memberchecking');
+
+Route::get('/viewgroup/{groupId}','GroupController@ViewGroup')->middleware('memberchecking');
+
+Route::post('/sendchat/{groupId}','GroupController@SendChat');
+
+Route::post('/addmember/{groupId}','GroupController@AddMember');
 
 Route::get('/upgrade', function(){
     return view('upgrade');
