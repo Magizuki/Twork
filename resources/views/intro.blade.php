@@ -1,6 +1,6 @@
 @extends('layouts.MasterPage')
 
-@section('title', 'Intro — Twork')
+@section('title', 'Upgrade — Twork')
 
 @section('content_placeholder')
 

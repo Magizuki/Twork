@@ -34,3 +34,7 @@ Route::post('/submitgroup','GroupController@SubmitGroup')->middleware('memberche
 
 Route::get('/listgroup','GroupController@ViewGroup')->middleware('memberchecking');
 
+Route::get('/upgrade', function(){
+    return view('upgrade');
+})->middleware('memberchecking');
+
