@@ -36,7 +36,6 @@ class AuthController extends Controller
                 $user->save();
 
                 return redirect(url('/login'));
-
             }
 
         }
@@ -53,7 +52,7 @@ class AuthController extends Controller
 
 
         $credential = $request->only('email', 'password');
-
+        $return = "";
         if($request->remember != null){
             Auth::attempt($credential, true);
 
@@ -66,7 +65,14 @@ class AuthController extends Controller
         else{
             Auth::attempt($credential);
         }
-        $return ="/home/".Auth::user()->id;
+        
+        if(Auth::user() == null){
+            $return = "/login";
+            
+        }
+        else{
+            $return ="/home/".Auth::user()->id;
+        }
         return redirect($return);
     
     }
