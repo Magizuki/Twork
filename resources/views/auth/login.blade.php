@@ -1,8 +1,8 @@
-@extends('layouts.master')
+@extends('layouts.MasterPage')
 
 @section('title', 'Login — Twork')
 
-@section('content')
+@section('content_placeholder')
 
 @if (Auth::check())
     <script>window.location = "/home";</script>
