@@ -22,7 +22,7 @@
             </div>
             <div class="p-5 bd-highlight">
                 <a href="#" role="button" class="btn btn-primary btn-lg active">
-                    Open Existring Project
+                    Open Existing Project
                 </a>
             </div>
         </div>

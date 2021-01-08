@@ -40,7 +40,11 @@ Route::post('/sendchat/{groupId}','GroupController@SendChat');
 
 Route::post('/addmember/{groupId}','GroupController@AddMember');
 
-Route::get('/upgrade', function(){
-    return view('upgrade');
-})->middleware('memberchecking');
+Route::get('/myprofile/{UserId}', 'UserController@showMyProfile')->middleware('memberchecking');
+
+Route::get('/changepassword/{UserId}', 'UserController@showChangePassword')->middleware('memberchecking');
+Route::post('/dochangepassword', 'UserController@doChangePassword')->middleware('memberchecking');
+
+Route::get('/upgrade', 'UserController@showUpgrade')->middleware('memberchecking');
+
 

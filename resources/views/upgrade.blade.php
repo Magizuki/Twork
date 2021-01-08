@@ -1,11 +1,15 @@
 @extends('layouts/masterpage')
 
-@section('title', 'Home')
+@section('title', 'Upgrade')
 
 @section('css_masterpage')
     <style>
         .LineHomePage{
             height: 10px;
+        }
+        .upgrade-content{
+            font-weight:500; 
+            font-size: 30px;
         }
     </style>
 
@@ -20,15 +24,17 @@
         <h1 style="color: black; font-family: 'Oswald', sans-serif;">UPGRADE</h1>
         <hr>
         <br>
-        Benefits : <br>
-        - Max Storage Capacity increased from 15 GB to 500 GB <br>
-        - Max Editor in one project can be set up from 1-500 people <br>
-        - Premium Sticker enabled <br>
+        <div class="upgrade-content">
+            <p> Benefits : </p>
+            - Max Storage Capacity increased from 15 GB to 500 GB <br>
+            - Max Editor in one project can be set up from 1-500 people <br>
+            - Premium Sticker enabled <br>
+        </div>
     </div>
-
-   
     <br>
-    <div class="justify-content-center" style="text-align: center" >
+   <br>
+    <br>
+    <div class="justify-content-center" style="text-align: center; font-weight: 500; font-size: 30px" >
        Price : IDR 750.000,00
     </div>
 

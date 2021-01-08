@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <!-- CSS for masterpage start here -->
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}}">
     <link rel="icon" type="image/png" href="{{asset('storage/img/PHizzaHutLogo.jpg')}}"/>
@@ -12,6 +15,12 @@
     <!-- JS for masterpage start here -->
     <script src="{{asset('js/jquery-3.5.1.min.js')}}"></script>
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
 
     <style>
         body{
@@ -78,7 +87,7 @@
                         </div>
                     </div>
                     <div class="p-2 bd-highlight">
-                        <a href="#" class="NavbarText">My Profile</a>
+                        <a href="/myprofile/{{Auth::user()->id}}" class="NavbarText">My Profile</a>
                     </div>
                     <div class="p-2 bd-highlight">
                         <a href="/logout" class="NavbarText">Log Out</a>

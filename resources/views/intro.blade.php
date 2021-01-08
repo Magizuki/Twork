@@ -1,11 +1,11 @@
 @extends('layouts.MasterPage')
 
-@section('title', 'Upgrade — Twork')
+@section('title', 'Intro — Twork')
 
 @section('content_placeholder')
 
 @if (Auth::check())
-    <script>window.location = "/home";</script>
+    <script>window.location = "/home/{{Auth::user()->id}}";</script>
 @endif
 
 <div class="container">

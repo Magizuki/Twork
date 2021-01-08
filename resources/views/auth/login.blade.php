@@ -39,4 +39,12 @@
 
 </div>
 
+<script>
+  var message = '{{Session::get('alert')}}';
+  var exist = '{{Session::has('alert')}}';
+  if(exist!=false){
+    alert(message);
+  }
+</script>
+
 @endsection

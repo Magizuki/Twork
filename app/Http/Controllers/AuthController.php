@@ -56,6 +56,12 @@ class AuthController extends Controller
         if($request->remember != null){
             Auth::attempt($credential, true);
 
+            if(Auth::user() == null){
+                $return = "/login";
+                $message = "Email or Password Wrong";
+                return redirect($return)->with('alert', $message);
+            }
+
             $minute = 60;
             $rememberToken = Auth::getRecallerName();
 
@@ -68,10 +74,11 @@ class AuthController extends Controller
         
         if(Auth::user() == null){
             $return = "/login";
-            
+            $message = "Email or Password Wrong";
+            return redirect($return)->with('alert', $message);
         }
         else{
-            $return ="/home/".Auth::user()->id;
+            $return ="/"."home/".Auth::user()->id;
         }
         return redirect($return);
     
