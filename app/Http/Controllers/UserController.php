@@ -25,18 +25,15 @@ class UserController extends Controller
 
     function doChangePassword(Request $request){
 
+        /* Validasi form. */
+        $this->validate($request, ['oldpassword'=>'required', 'newpassword' => 'required|min:4|max:255', 'confirmnewpassword' => 'required']);
+
         $oldpass = $request->oldpassword;
         $pass1 = $request->newpassword;
         $pass2 = $request->confirmnewpassword;
 
-        // echo  $oldpass."<br>";
-        // echo $pass1."<br>";
-        // echo $pass2."<br>";
-        // echo Auth::user()->password."<br>";
-        // die();
-
-
-        if(Hash::check($oldpass, Auth::user()->password) != false &&  $pass1 == $pass2){
+    
+        if(Hash::check($oldpass, Auth::user()->password) != false &&  $pass1 == $pass2 ){
             $userid = Auth::user()->id;
             User::where('id','=',$userid)->update([
                 'password' => Hash::make($pass1) 
