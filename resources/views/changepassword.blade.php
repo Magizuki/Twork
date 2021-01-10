@@ -1,4 +1,4 @@
-@extends('layouts/masterpage')
+@extends('layouts/MasterPage')
 
 @section('title', 'Change Password')
 

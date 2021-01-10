@@ -1,4 +1,4 @@
-@extends('layouts.MasterPage')
+@extends('layouts/MasterPage')
 
 @section('title', 'Register — Twork')
 
